@@ -1,5 +1,5 @@
 // Code your design here
-module combo(
+module BenAtUvu_combo(
   input [3:0] Intput, 
   input reset, masterReset, 
   output reg Unlock = 0
