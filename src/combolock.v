@@ -1,9 +1,11 @@
 // Code your design here
-module combo(Intput, reset, masterReset, Unlock);
+module combo(
+  input [3:0] Intput, 
+  input reset, masterReset, 
+  output reg Unlock = 0
+);
   // in this module 4 bits are used to represent 0-9 BUT 0 if not represented with 0000
-  input [3:0] Intput;
-  input reset, masterReset;
-  output reg Unlock = 0;
+
   //locks is used for the combo lock1 is the first button that neededs to be pressed then lock2 is the second button
   reg [3:0] lock1 = 0;
   reg [3:0] lock2 = 0;
