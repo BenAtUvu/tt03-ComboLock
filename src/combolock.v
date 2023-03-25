@@ -1,9 +1,17 @@
 // Code your design here
 module BenAtUvu_combo(
-  input [3:0] Intput, 
-  input reset, masterReset, 
-  output reg Unlock = 0
+  //input [3:0] Intput, 
+  //input reset, masterReset, 
+  //output reg Unlock = 0
+  input [7:0] io_in,
+  output [7:0] io_out
 );
+  wire [3:0] Intput;
+  wire reset = io_in[4];
+  wire masterReset = io_in[5];
+  reg Unlock;
+  assign Intput = io_in[3:0];
+  assign io_out[0] = Unlock;
   // in this module 4 bits are used to represent 0-9 BUT 0 if not represented with 0000
 
   //locks is used for the combo lock1 is the first button that neededs to be pressed then lock2 is the second button
